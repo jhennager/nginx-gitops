@@ -5,7 +5,7 @@ metadata:
   namespace: kommander
 spec:
   interval: 1m
-  url: https://github.com/organon/nkp-config.git
+  url: https://github.com/jhennager/nginx-gitops.git
   ref:
     branch: main
 ---
