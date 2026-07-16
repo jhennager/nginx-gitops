@@ -1,0 +1,8 @@
+replicaCount: 3
+nodeSelector:
+  dedicated: pasx-secure
+tolerations:
+- key: "dedicated"
+  operator: "Equal"
+  value: "pasx-secure"
+  effect: "NoSchedule"

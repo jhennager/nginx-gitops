@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: organon-manufacturing
+resources:
+  - nginx-release.yaml
+configMapGenerator:
+  - name: nginx-values-cm
+    files:
+      - values.yaml=nginx-values.yaml

@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nginx-production
+  namespace: workload
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: nginx
+      version: "15.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: organon-manufacturing
+  kubeConfig:
+    secretRef:
+      name: bish-ntx-nkp-work-kubeconfig-kubeconfig
+
+  # --- NEW: REFERENCE THE EXTERNAL VALUES ---
+  valuesFrom:
+    - kind: ConfigMap
+      name: nginx-values-cm
+      valuesKey: values.yaml
