@@ -22,3 +22,8 @@ spec:
     kind: GitRepository
     name: nginx-helm
     namespace: kommander
+  # 2. THIS IS THE MAGIC BLOCK
+  kubeConfig:
+    secretRef:
+      # The name of the secret NKP generated for your workload cluster
+      name: bish-ntx-nkp-work-kubeconfig
