@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami-charts
-        namespace: organon-manufacturing
+        namespace: workload
   kubeConfig:
     secretRef:
       name: bish-ntx-nkp-work-kubeconfig
