@@ -13,9 +13,6 @@ spec:
         kind: HelmRepository
         name: bitnami-charts
         namespace: workload
-  kubeConfig:
-    secretRef:
-      name: bish-ntx-nkp-work-kubeconfig
   valuesFrom:
     - kind: ConfigMap
       name: nginx-values-cm
