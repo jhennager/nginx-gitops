@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: nginx-gitops
+  namespace: kommander  # Or your specific NKP workspace namespace
+spec:
+  interval: 1m  # How often Flux checks Git for changes
+  url: https://github.com/jhennager/nginx-gitops.git
+  ref:
+    branch: main

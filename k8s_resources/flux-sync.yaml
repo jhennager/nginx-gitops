@@ -1,0 +1,21 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: nginx-sync
+  # 1. This must be the Workspace namespace where your workload cluster lives
+  namespace: workload
+spec:
+  interval: 2m
+  path: "./apps/nginx"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: nginx-gitops
+    namespace: kommander
+  targetNamespace: default
+
+  # 2. THIS IS THE MAGIC BLOCK
+  kubeConfig:
+    secretRef:
+      # The name of the secret NKP generated for your workload cluster
+      name: bish-ntx-nkp-work-kubeconfig
