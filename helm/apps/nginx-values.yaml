@@ -6,3 +6,6 @@ tolerations:
   operator: "Equal"
   value: "pasx-secure"
   effect: "NoSchedule"
+image:
+  repository: bitnami/nginx
+  tag: 1.27.3
