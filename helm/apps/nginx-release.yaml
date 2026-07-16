@@ -15,7 +15,7 @@ spec:
         namespace: organon-manufacturing
   kubeConfig:
     secretRef:
-      name: bish-ntx-nkp-work-kubeconfig-kubeconfig
+      name: bish-ntx-nkp-work-kubeconfig
 
   # --- NEW: REFERENCE THE EXTERNAL VALUES ---
   valuesFrom:
